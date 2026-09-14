@@ -52,7 +52,7 @@ table — not a re-paste of the whole file.
 As a plugin marketplace (recommended):
 
 ```bash
-claude plugin marketplace add zkylek1212-k/project-init
+claude plugin marketplace add zkylek1212-k/Project-init-skill
 claude plugin install project-init@project-init
 ```
 
