@@ -1,0 +1,8 @@
+{
+  "name": "project-init",
+  "description": "Manual-only project kickoff skill for Claude Code. Runs once per project: wires up the agent-hub dispatch roster from agent-squad.md, reviews and improves implement.md against an 8-point checklist, and scaffolds shared project memory. Never auto-triggers — the user must type /project-init.",
+  "version": "0.1.0",
+  "author": {
+    "name": "zkylek1212-k"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "project-init",
+  "owner": {
+    "name": "zkylek1212-k"
+  },
+  "plugins": [
+    {
+      "name": "project-init",
+      "displayName": "Project Init",
+      "source": "./",
+      "description": "Manual-only, once-per-project kickoff skill. Wires up the agent-hub dispatch roster, reviews and improves implement.md against an 8-point checklist, and scaffolds shared project memory. Guarded by a .project-init.done sentinel so it never runs twice."
+    }
+  ]
+}
