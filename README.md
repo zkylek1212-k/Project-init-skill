@@ -62,6 +62,18 @@ Or drop the skill in by hand:
 cp -r skills/project-init ~/.claude/skills/
 ```
 
+### Codex
+
+Add the repository marketplace and install the plugin:
+
+```bash
+codex plugin marketplace add zkylek1212-k/Project-init-skill
+codex plugin add project-init@project-init
+```
+
+In Codex, invoke the skill explicitly with `$project-init`. It remains manual-only and honors
+the same `.project-init.done` sentinel and file-preservation rules.
+
 ## Usage
 
 From inside the project you want to set up:

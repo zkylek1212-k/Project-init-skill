@@ -1,0 +1,21 @@
+{
+  "name": "project-init",
+  "version": "1.0.0",
+  "description": "Manual-only, once-per-project kickoff skill for Codex.",
+  "author": {
+    "name": "zkylek1212-k",
+    "url": "https://github.com/zkylek1212-k"
+  },
+  "homepage": "https://github.com/zkylek1212-k/Project-init-skill",
+  "repository": "https://github.com/zkylek1212-k/Project-init-skill",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Project Init",
+    "shortDescription": "Set up a project once, on explicit request.",
+    "longDescription": "Manually initialize a project using the project-init skill, with a once-per-project sentinel and guarded file updates.",
+    "developerName": "zkylek1212-k",
+    "category": "Productivity",
+    "capabilities": ["Skills"]
+  }
+}

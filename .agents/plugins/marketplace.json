@@ -1,0 +1,21 @@
+{
+  "name": "project-init",
+  "interface": {
+    "displayName": "Project Init"
+  },
+  "plugins": [
+    {
+      "name": "project-init",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zkylek1212-k/Project-init-skill.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
