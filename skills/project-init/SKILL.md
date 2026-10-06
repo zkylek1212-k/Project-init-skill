@@ -29,7 +29,10 @@ test -f .project-init.done && cat .project-init.done
 1. 讀本 skill 目錄下的 `agent-squad.md`，那是**派工模型名單的唯一真相來源**
    （與 multi-agent-dispatch skill 內文若有出入，以 `agent-squad.md` 為準）。
 2. 確認 hub 活著：載入並呼叫 `get_active_workers`
-   （工具若是 deferred，先 `ToolSearch` query `select:mcp__plugin_multi-agent-hub_agent-hub__get_active_workers`）。
+   - Codex：工具若是 deferred，搜尋 `get_active_workers`；完整名稱是
+     `mcp__agent_hub__get_active_workers`。
+   - Claude Code / Antigravity：保持既有工具載入方式；Claude Code 可用
+     `ToolSearch` query `select:mcp__plugin_multi-agent-hub_agent-hub__get_active_workers`。
    - 回傳 worker 名單 → 記下實際可用的 worker 名稱。
    - 連不上／空名單 → **不要卡住**，標記「agent-hub 目前不可用，本專案先以 solo 模式進行」，繼續步驟 2。
 3. 把名單落地到專案：若專案根目錄沒有 `agent-squad.md`，複製本 skill 的那份過去
@@ -81,8 +84,10 @@ ls implement.md IMPLEMENT.md docs/implement.md 2>/dev/null
 1. 確認是 git repo：`git rev-parse --git-dir`。
    - 不是 → 問使用者要不要 `git init`（memory-init 需要 git hooks）。使用者說不要就跳過本步驟，
      在回報中標明「未建立 shared memory：非 git repo」。
-2. 是 git repo → 呼叫 `Skill` 執行 `shared-project-memory:memory-init`，照它的流程走完
-   （它本身 idempotent，不覆蓋既有檔案）。
+2. 是 git repo → 依執行環境載入 memory-init：
+   - Codex：執行 `shared-project-memory:source-command-memory-init` skill。
+   - Claude Code / Antigravity：保持既有 `shared-project-memory:memory-init` 流程。
+   兩者都必須走完原流程；初始化本身 idempotent，不覆蓋既有檔案。
 3. 填 `.project-memory/STATE.md` 與 `handoff.md` 時，只寫**從 README / 建置檔 / `git log` 真的看得到的事實**；
    推測的一律標 `Unverified`。**不得杜撰進度或任務。**
 
