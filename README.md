@@ -115,11 +115,14 @@ Nothing else is touched. `implement.md` is the only pre-existing file the skill 
 truth** for worker models. Edit it to match your own setup:
 
 ```
-tier            worker    model                    good for
-top logic       agy_cli   gemini-3.1-pro-high      architecture, core logic, hard debugging
-workhorse       agy_cli   gemini-3.8-flash-high    general dev, UI, API wiring
-default grunt   agy_cli   gemini-3.7-flash-high    boilerplate, fixtures, translation
+tier            worker      model                  effort  good for
+top arch        claude_cli  claude-opus-5-5        high    cross-module refactors, integration, careful review
+top logic       codex_cli   gpt-6.1-sol            high    core algorithms, hard debugging, backend logic
+top logic       agy_cli     gemini-3.1-pro-high    -       architecture, core logic, hard debugging
+workhorse       agy_cli     gemini-3.8-flash-high  -       general dev, UI, API wiring, boilerplate, fixtures, translation (default)
 ```
+
+`effort` for claude_cli / codex_cli requires an agent-hub version whose `delegate_to_worker` accepts `effort`.
 
 If this file ever disagrees with a dispatch skill's inline model list, **this file wins**.
 
