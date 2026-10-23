@@ -74,6 +74,22 @@ codex plugin add project-init@project-init
 In Codex, invoke the skill explicitly with `$project-init`. It remains manual-only and honors
 the same `.project-init.done` sentinel and file-preservation rules.
 
+### Antigravity
+
+Clone the repository into your global Antigravity plugins directory:
+
+```bash
+git clone https://github.com/zkylek1212-k/Project-init-skill.git ~/.gemini/config/plugins/project-init
+```
+
+Or validate and install with `agy`:
+
+```bash
+agy plugin validate ~/.gemini/config/plugins/project-init
+```
+
+In Antigravity, invoke `/project-init` or request the `project-init` skill explicitly.
+
 ## Usage
 
 From inside the project you want to set up:
